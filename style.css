@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: url('Aishat.JPG') no-repeat center center fixed;
+}
+
+
+.form-container,.id-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  min-height: 480px;
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: rgb(26, 206, 26);
+  color: rgb(0, 2, 0);
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #430089;
+  color: #fff;
+}
+
+
+.id-card {
+  text-align: center;
+}
+
+#id-photo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#id-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.id-card p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.id-card span {
+  font-weight: normal;
+  color: #333;
+}
+
+#Hire-me{
+  background-color: #6a07db;
+  color:rgb(0, 2, 0);
+  border: #000000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  transition: background-color 0.3s ease;
+}
+
+#Hire-me:hover{
+  background-color: #068d11;
+  border-style:groove;
+}
