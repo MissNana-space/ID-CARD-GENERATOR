@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY ID CARD GENERATOR</title>
+
+</head>
+  
+<body>
+  <div class="form-container">
+    <h1> Create ID Card</h1>
+    <form id="id-form">
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" accept="image/*" />
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+
+      <label for="Matric Number">Matric Number:</label>
+      <input type="Matric Number" id="matric-no" placeholder="Enter your Matric Number" />
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" placeholder="Enter your department" />
+
+      <label for="skills">Skills:</label>
+      <input type="text" id="skills" placeholder="Enter your skills" />
+
+      <button type="button" onclick="updateIDCard()">Generate ID Card</button>
+    </form>
+  </div>
+
+  <div class="id-card">
+    <h1> U-Inspire Web Development</h1>
+    <h2> Student ID Card</h2>
+    <div id="id-photo"><span>Photo</span></div>
+    <p><strong>Name:<br></strong> <span id="id-name">Your Name</span></p>
+    <p><strong>Matric Number:<br></strong> <span id="id-matric">Your Matric Number</span></p>
+    <p><strong>Department:<br></strong> <span id="id-department">Your Department</span></p>
+    <p><strong>Skills:<br></strong> <span id="id-skills">HTML, CSS, JS</span></p>
+
+    <button id="Hire-me">HIRE ME</button>
+    
+  </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function updateIDCard() {
+      // Step 1: Capture values from form fields
+      const name = document.getElementById("name").value;
+      const matric = document.getElementById("matric-no").value;
+      const department = document.getElementById("department").value;
+      const skills = document.getElementById("skills").value;
+      const photoInput = document.getElementById("photo");
+
+      // Step 2: Display values inside the card
+      document.getElementById("id-name").textContent = name || "Your Name";
+      document.getElementById("id-matric").textContent = email || "Your Matric Number";
+      document.getElementById("id-department").textContent = department || "Your Department";
+      document.getElementById("id-skills").textContent = skills || "HTML, CSS , JS";
+
+      // Step 2: Handle profile picture preview
+      const photoPreview = document.getElementById("id-photo");
+      if (photoInput.files && photoInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          photoPreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Photo" style="width: 100px; height: 100px; border-radius: 50%;">`;
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        photoPreview.innerHTML = `<span>Photo</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
+
+<style> 
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: url('Aishat.JPG') no-repeat center center fixed;
+  }
+  
+  
+  .form-container,.id-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    min-height: 480px;
+  }
+  
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    background-color: rgb(26, 206, 26);
+    color: rgb(0, 2, 0);
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  form button:hover {
+    background-color: #430089;
+    color: #fff;
+  }
+  
+  
+  .id-card {
+    text-align: center;
+  }
+  
+  #id-photo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #id-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .id-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #430089;
+  }
+  
+  .id-card span {
+    font-weight: normal;
+    color: #000000;
+  }
+  
+  #Hire-me{
+    background-color: #1abe28;
+    color:rgb(0, 2, 0);
+    border: #000000;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #Hire-me:hover{
+    background-color: #6a07db;
+    border-style:groove;
+  }
+</style>
