@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY ID CARD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  
+
+<body>
+  <div class="form-container">
+    <h1> Create ID Card</h1>
+    <form id="id-form">
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" accept="image/*" />
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+
+      <label for="Matric Number">Matric Number:</label>
+      <input type="Matric Number" id="matric-no" placeholder="Enter your Matric Number" />
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" placeholder="Enter your department" />
+
+      <label for="skills">Skills:</label>
+      <input type="text" id="skills" placeholder="Enter your skills" />
+
+      <button type="button" onclick="updateIDCard()">Generate ID Card</button>
+    </form>
+  </div>
+
+  <div class="id-card">
+    <h1> U-Inspire Web Development</h1>
+    <h2> Student ID Card</h2>
+    <div id="id-photo"><span>Photo</span></div>
+    <p><strong>Name:</strong> <span id="id-name">Your Name</span></p>
+    <p><strong>Matric Number:</strong> <span id="id-matric">Your Matric Number</span></p>
+    <p><strong>Department:</strong> <span id="id-department">Your Department</span></p>
+    <p><strong>Skills:</strong> <span id="id-skills">HTML, CSS</span></p>
+
+    <button id="Hire-me">HIRE ME</button>
+    
+  </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function updateIDCard() {
+      // Step 1: Capture values from form fields
+      const name = document.getElementById("name").value;
+      const matric = document.getElementById("matric-no").value;
+      const department = document.getElementById("department").value;
+      const skills = document.getElementById("skills").value;
+      const photoInput = document.getElementById("photo");
+
+      // Step 2: Display values inside the card
+      document.getElementById("id-name").textContent = name || "Your Name";
+      document.getElementById("id-matric").textContent = email || "Your Matric Number";
+      document.getElementById("id-department").textContent = department || "Your Department";
+      document.getElementById("id-skills").textContent = skills || "HTML, CSS";
+
+      // Step 2: Handle profile picture preview
+      const photoPreview = document.getElementById("id-photo");
+      if (photoInput.files && photoInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          photoPreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Photo" style="width: 100px; height: 100px; border-radius: 50%;">`;
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        photoPreview.innerHTML = `<span>Photo</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
